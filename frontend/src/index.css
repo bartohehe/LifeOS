@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-void: #0c0c14;
+    --bg-void-800: #111120;
+    --bg-void-700: #161628;
+    --glass-surface: rgba(253, 250, 245, 0.06);
+    --glass-border: rgba(253, 250, 245, 0.12);
+    --glass-highlight: rgba(253, 250, 245, 0.18);
+    --glass-top-border: rgba(253, 250, 245, 0.25);
+    --accent-violet: #7c3aed;
+    --accent-violet-light: #a78bfa;
+    --text-offwhite: #fdfaf5;
+    --text-muted: rgba(253, 250, 245, 0.6);
+    --text-subtle: rgba(253, 250, 245, 0.35);
+    --xp-start: #7c3aed;
+    --xp-end: #6366f1;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body, #root {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--bg-void);
+    color: var(--text-offwhite);
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-void-800);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(124, 58, 237, 0.4);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(124, 58, 237, 0.6);
+  }
+}
+
+@layer components {
+  /* Liquid Glass base class */
+  .glass {
+    background: linear-gradient(
+      135deg,
+      var(--glass-surface) 0%,
+      rgba(253, 250, 245, 0.03) 100%
+    );
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    border-top-color: var(--glass-top-border);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(253, 250, 245, 0.15),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  .glass-sm {
+    background: rgba(253, 250, 245, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(253, 250, 245, 0.1);
+  }
+
+  /* Void background with nebula */
+  .void-bg {
+    background-color: var(--bg-void);
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(99, 60, 180, 0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(20, 120, 200, 0.1) 0%, transparent 50%);
+  }
+
+  /* XP bar gradient */
+  .xp-bar {
+    background: linear-gradient(90deg, var(--xp-start), var(--xp-end));
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
+  }
+}
