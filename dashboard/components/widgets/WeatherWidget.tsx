@@ -1,8 +1,9 @@
 'use client'
+import React from 'react'
 import { Sun, Cloud, CloudRain, CloudSnow, Wind } from 'lucide-react'
 import useWeather from '@/hooks/useWeather'
 
-const ICON_MAP: Record<string, any> = {
+const ICON_MAP: Record<string, React.ComponentType<{ size?: number | string; color?: string }>> = {
   sunny: Sun,
   cloudy: Cloud,
   rain: CloudRain,
