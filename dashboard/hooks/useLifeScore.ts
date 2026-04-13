@@ -1,3 +1,4 @@
+'use client'
 import { useMemo } from 'react'
 import { calculateLifeScore } from '@/lib/lifeScore'
 import type { LifeScoreData } from '@/lib/types'
