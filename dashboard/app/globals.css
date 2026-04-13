@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-dark:          #1E2D1A;
+    --color-mid:           #3D5C35;
+    --color-accent:        #5C7A4E;
+    --color-bg:            #EFF5EC;
+    --color-surface:       #DAE8D4;
+    --color-line:          #B8CDB2;
+    --color-beige:         #E8D5B7;
+    --color-beige-dark:    #C8A87A;
+    --color-beige-surface: #F5EAD8;
+    --color-beige-line:    #D4BC9E;
+    --bg-dawn:   linear-gradient(180deg, #B8CDB2 0%, #EFF5EC 100%);
+    --bg-day:    linear-gradient(180deg, #EFF5EC 0%, #DAE8D4 100%);
+    --bg-sunset: linear-gradient(180deg, #C8A882 0%, #5C4033 100%);
+    --bg-night:  linear-gradient(180deg, #1A2318 0%, #0D150B 100%);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #EFF5EC; color: #1E2D1A; }
+  ::-webkit-scrollbar { display: none; }
+}
+
+@layer components {
+  .card-green {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(30,45,26,0.10);
+    padding: 20px;
+  }
+  .card-beige {
+    background: var(--color-beige-surface);
+    border: 1px solid var(--color-beige-line);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(30,45,26,0.10);
+    padding: 20px;
+  }
+}
