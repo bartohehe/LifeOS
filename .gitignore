@@ -1,77 +1,36 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-*.egg
-*.egg-info/
+# Node
+node_modules/
+.next/
+out/
 dist/
-build/
-.eggs/
-*.pyo
-*.pyd
+.pnp
+.pnp.js
 
-# Virtual environments
-venv/
-.venv/
-env/
-.env/
-ENV/
-
-# Environment variables
+# Env
 .env
 .env.local
 .env.*.local
 
-# Django
+# Logs
 *.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-media/
-
-# Node
-node_modules/
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
 
-# Build output
-dist/
-.vite/
-build/
-out/
-
-# Coverage
-coverage/
-.coverage
-.coverage.*
-htmlcov/
-.pytest_cache/
-.nyc_output/
+# OS
+.DS_Store
+Thumbs.db
 
 # IDEs
 .vscode/
 .idea/
 *.swp
-*.swo
-*~
 
-# OS
-.DS_Store
-.DS_Store?
-._*
-Thumbs.db
-ehthumbs.db
+# Build
+.turbo/
+.vercel/
 
-# Docker
-.docker/
+# Supabase
+supabase/.branches
+supabase/.temp
 
-# Superpowers
+# Tools
 .superpowers/
-
-# Misc
-*.log
-*.bak
-*.orig
