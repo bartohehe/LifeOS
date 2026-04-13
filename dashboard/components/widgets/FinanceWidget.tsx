@@ -1,3 +1,5 @@
+'use client'
+
 import ProgressBar from '@/components/ui/ProgressBar'
 import Badge from '@/components/ui/Badge'
 
