@@ -32,7 +32,7 @@
 
 The hook returns a `WeatherData` object (extends `Weather` from `lib/types.ts` with `humidity`). Mock is active by default; the real polling useEffect is commented out.
 
-- [ ] **Step 1: Replace hook contents**
+**Step 1: Replace hook contents**
 
 ```typescript
 // hooks/useWeather.ts
@@ -84,7 +84,7 @@ export default function useWeather(_location: string): {
 }
 ```
 
-- [ ] **Step 2: Verify TypeScript**
+**Step 2: Verify TypeScript**
 
 ```bash
 cd dashboard && npx tsc --noEmit
@@ -92,7 +92,7 @@ cd dashboard && npx tsc --noEmit
 
 Expected: no errors relating to `hooks/useWeather.ts`
 
-- [ ] **Step 3: Commit**
+**Step 3: Commit**
 
 ```bash
 git add dashboard/hooks/useWeather.ts
@@ -108,7 +108,7 @@ git commit -m "feat: implement useWeather hook with mock data"
 
 Returns `LifeScoreData` from `calculateLifeScore()` with mock inputs. Real polling fetch is commented out.
 
-- [ ] **Step 1: Replace hook contents**
+**Step 1: Replace hook contents**
 
 ```typescript
 // hooks/useLifeScore.ts
@@ -155,7 +155,7 @@ export default function useLifeScore(): {
 }
 ```
 
-- [ ] **Step 2: Verify TypeScript**
+**Step 2: Verify TypeScript**
 
 ```bash
 cd dashboard && npx tsc --noEmit
@@ -163,7 +163,7 @@ cd dashboard && npx tsc --noEmit
 
 Expected: no errors relating to `hooks/useLifeScore.ts`
 
-- [ ] **Step 3: Commit**
+**Step 3: Commit**
 
 ```bash
 git add dashboard/hooks/useLifeScore.ts
@@ -179,7 +179,7 @@ git commit -m "feat: implement useLifeScore hook with mock data"
 
 ClockWidget currently has hardcoded `#1E2D1A`. On dark night/sunset backgrounds it becomes unreadable. Add an optional `color` prop defaulting to `#1E2D1A`.
 
-- [ ] **Step 1: Update ClockWidget**
+**Step 1: Update ClockWidget**
 
 ```typescript
 // components/widgets/ClockWidget.tsx
@@ -212,7 +212,7 @@ export default function ClockWidget({ color = '#1E2D1A' }: ClockWidgetProps) {
 }
 ```
 
-- [ ] **Step 2: Verify TypeScript**
+**Step 2: Verify TypeScript**
 
 ```bash
 cd dashboard && npx tsc --noEmit
@@ -220,7 +220,7 @@ cd dashboard && npx tsc --noEmit
 
 Expected: no errors
 
-- [ ] **Step 3: Commit**
+**Step 3: Commit**
 
 ```bash
 git add dashboard/components/widgets/ClockWidget.tsx
@@ -236,7 +236,7 @@ git commit -m "feat: add color prop and date line to ClockWidget"
 
 Uses `useWeather('Warszawa')`. Maps `condition` string to a Lucide icon component.
 
-- [ ] **Step 1: Implement WeatherWidget**
+**Step 1: Implement WeatherWidget**
 
 ```typescript
 // components/widgets/WeatherWidget.tsx
@@ -277,7 +277,7 @@ export default function WeatherWidget() {
 }
 ```
 
-- [ ] **Step 2: Verify TypeScript**
+**Step 2: Verify TypeScript**
 
 ```bash
 cd dashboard && npx tsc --noEmit
@@ -285,7 +285,7 @@ cd dashboard && npx tsc --noEmit
 
 Expected: no errors
 
-- [ ] **Step 3: Commit**
+**Step 3: Commit**
 
 ```bash
 git add dashboard/components/widgets/WeatherWidget.tsx
@@ -301,7 +301,7 @@ git commit -m "feat: implement WeatherWidget with mock data"
 
 Uses `useLifeScore()`. Displays large score number colored by `scoreColor()`, plus 4 labeled `ProgressBar` components. `ProgressBar` already accepts `value`, `color`, `height` props.
 
-- [ ] **Step 1: Implement LifeScoreWidget**
+**Step 1: Implement LifeScoreWidget**
 
 ```typescript
 // components/widgets/LifeScoreWidget.tsx
@@ -350,7 +350,7 @@ export default function LifeScoreWidget() {
 }
 ```
 
-- [ ] **Step 2: Verify TypeScript**
+**Step 2: Verify TypeScript**
 
 ```bash
 cd dashboard && npx tsc --noEmit
@@ -358,7 +358,7 @@ cd dashboard && npx tsc --noEmit
 
 Expected: no errors
 
-- [ ] **Step 3: Commit**
+**Step 3: Commit**
 
 ```bash
 git add dashboard/components/widgets/LifeScoreWidget.tsx
@@ -374,7 +374,7 @@ git commit -m "feat: implement LifeScoreWidget with score + component bars"
 
 Replaces the current stub (which imports unused `AvatarSystem` and `LofiRadio`). Full 3-row grid with ClockWidget top-left, WeatherWidget top-right, inline SVG avatar center, LifeScoreWidget bottom-left.
 
-- [ ] **Step 1: Implement PassiveLayout**
+**Step 1: Implement PassiveLayout**
 
 ```typescript
 // components/layout/PassiveLayout.tsx
@@ -432,7 +432,7 @@ export default function PassiveLayout({ textColor }: PassiveLayoutProps) {
 }
 ```
 
-- [ ] **Step 2: Verify TypeScript**
+**Step 2: Verify TypeScript**
 
 ```bash
 cd dashboard && npx tsc --noEmit
@@ -440,7 +440,7 @@ cd dashboard && npx tsc --noEmit
 
 Expected: no errors
 
-- [ ] **Step 3: Commit**
+**Step 3: Commit**
 
 ```bash
 git add dashboard/components/layout/PassiveLayout.tsx
@@ -456,7 +456,7 @@ git commit -m "feat: implement PassiveLayout with avatar placeholder and widget 
 
 Client component. Owns the 5-minute dim timer (CSS opacity). `onMouseMove`/`onTouchStart` resets timer. When dimmed, first interaction wakes (restores opacity). When awake, click navigates to `/dashboard`.
 
-- [ ] **Step 1: Implement passive page**
+**Step 1: Implement passive page**
 
 ```typescript
 // app/page.tsx
@@ -519,7 +519,7 @@ export default function PassivePage() {
 }
 ```
 
-- [ ] **Step 2: Verify TypeScript**
+**Step 2: Verify TypeScript**
 
 ```bash
 cd dashboard && npx tsc --noEmit
@@ -527,7 +527,7 @@ cd dashboard && npx tsc --noEmit
 
 Expected: no errors
 
-- [ ] **Step 3: Commit**
+**Step 3: Commit**
 
 ```bash
 git add dashboard/app/page.tsx
@@ -543,7 +543,7 @@ git commit -m "feat: implement passive mode page with dim timer and navigation"
 
 Adds the real OpenWeatherMap fetch as a commented block so it's ready to activate.
 
-- [ ] **Step 1: Update weather route**
+**Step 1: Update weather route**
 
 ```typescript
 // app/api/weather/route.ts
@@ -575,7 +575,7 @@ export async function GET(request: Request) {
 }
 ```
 
-- [ ] **Step 2: Commit**
+**Step 2: Commit**
 
 ```bash
 git add dashboard/app/api/weather/route.ts
@@ -586,7 +586,7 @@ git commit -m "docs: add commented real OpenWeatherMap implementation to weather
 
 ## Task 9: Visual verification
 
-- [ ] **Step 1: Start dev server**
+**Step 1: Start dev server**
 
 ```bash
 cd dashboard && npm run dev
@@ -594,7 +594,7 @@ cd dashboard && npm run dev
 
 Expected output: `ready - started server on 0.0.0.0:3000`
 
-- [ ] **Step 2: Open browser at `http://localhost:3000`**
+**Step 2: Open browser at `http://localhost:3000`**
 
 Verify:
 - Full-screen gradient background matching time of day
@@ -604,17 +604,17 @@ Verify:
 - Bottom-left: Life Score card (72, color #C8A87A amber, 4 bars)
 - No scroll, no nav bar
 
-- [ ] **Step 3: Test dim behavior**
+**Step 3: Test dim behavior**
 
 Move mouse away, wait 5 minutes (or temporarily change `DIM_DELAY_MS` to `5000` for testing). Page should fade to 20% opacity. Moving mouse should restore it. Clicking when active should navigate to `/dashboard`.
 
-- [ ] **Step 4: Restore DIM_DELAY_MS if changed for testing**
+**Step 4: Restore DIM_DELAY_MS if changed for testing**
 
 ```typescript
 const DIM_DELAY_MS = 5 * 60 * 1000 // restore to 5 minutes
 ```
 
-- [ ] **Step 5: Final commit if any fixes were needed**
+**Step 5: Final commit if any fixes were needed**
 
 ```bash
 git add -u

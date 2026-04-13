@@ -90,14 +90,14 @@ LifeOS/
 - Modify: `E:/Projekty/LifeOS/.env.example`
 - Modify: `E:/Projekty/LifeOS/docker-compose.yml`
 
-- [ ] **Step 1: Remove old directories**
+**Step 1: Remove old directories**
 
 ```bash
 cd E:/Projekty/LifeOS
 rm -rf backend/ frontend/
 ```
 
-- [ ] **Step 2: Update .gitignore**
+**Step 2: Update .gitignore**
 
 Replace the entire `.gitignore` with:
 
@@ -140,7 +140,7 @@ supabase/.temp
 .superpowers/
 ```
 
-- [ ] **Step 3: Update .env.example**
+**Step 3: Update .env.example**
 
 ```env
 # Supabase
@@ -162,7 +162,7 @@ NEXT_PUBLIC_LOFI_STREAM_URL=https://stream.example.com/lofi
 BRIGHTNESS_ENABLED=false
 ```
 
-- [ ] **Step 4: Update docker-compose.yml**
+**Step 4: Update docker-compose.yml**
 
 ```yaml
 version: '3.9'
@@ -178,7 +178,7 @@ services:
     restart: unless-stopped
 ```
 
-- [ ] **Step 5: Commit**
+**Step 5: Commit**
 
 ```bash
 cd E:/Projekty/LifeOS
@@ -198,7 +198,7 @@ git commit -m "chore: remove Django backend and Vite frontend, update root confi
 - Create: `dashboard/.env.local.example`
 - Create: `dashboard/Dockerfile`
 
-- [ ] **Step 1: Create dashboard/package.json**
+**Step 1: Create dashboard/package.json**
 
 ```json
 {
@@ -234,7 +234,7 @@ git commit -m "chore: remove Django backend and Vite frontend, update root confi
 }
 ```
 
-- [ ] **Step 2: Create dashboard/next.config.ts**
+**Step 2: Create dashboard/next.config.ts**
 
 ```typescript
 import type { NextConfig } from 'next'
@@ -252,7 +252,7 @@ const nextConfig: NextConfig = {
 export default nextConfig
 ```
 
-- [ ] **Step 3: Create dashboard/tsconfig.json**
+**Step 3: Create dashboard/tsconfig.json**
 
 ```json
 {
@@ -278,7 +278,7 @@ export default nextConfig
 }
 ```
 
-- [ ] **Step 4: Create dashboard/postcss.config.js**
+**Step 4: Create dashboard/postcss.config.js**
 
 ```js
 module.exports = {
@@ -289,7 +289,7 @@ module.exports = {
 }
 ```
 
-- [ ] **Step 5: Create dashboard/.env.local.example**
+**Step 5: Create dashboard/.env.local.example**
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
@@ -302,7 +302,7 @@ NEXT_PUBLIC_LOFI_STREAM_URL=https://stream.example.com/lofi
 BRIGHTNESS_ENABLED=false
 ```
 
-- [ ] **Step 6: Create dashboard/Dockerfile**
+**Step 6: Create dashboard/Dockerfile**
 
 ```dockerfile
 FROM node:20-alpine AS base
@@ -331,7 +331,7 @@ ENV HOSTNAME="0.0.0.0"
 CMD ["node", "server.js"]
 ```
 
-- [ ] **Step 7: Commit**
+**Step 7: Commit**
 
 ```bash
 cd E:/Projekty/LifeOS
@@ -347,7 +347,7 @@ git commit -m "feat: add Next.js 14 project setup"
 - Create: `dashboard/tailwind.config.ts`
 - Create: `dashboard/app/globals.css`
 
-- [ ] **Step 1: Create dashboard/tailwind.config.ts**
+**Step 1: Create dashboard/tailwind.config.ts**
 
 ```typescript
 import type { Config } from 'tailwindcss'
@@ -404,7 +404,7 @@ const config: Config = {
 export default config
 ```
 
-- [ ] **Step 2: Create dashboard/app/globals.css**
+**Step 2: Create dashboard/app/globals.css**
 
 ```css
 @tailwind base;
@@ -516,7 +516,7 @@ export default config
 }
 ```
 
-- [ ] **Step 3: Commit**
+**Step 3: Commit**
 
 ```bash
 cd E:/Projekty/LifeOS
@@ -535,7 +535,7 @@ git commit -m "feat: add lo-fi forest design system (tailwind + globals)"
 - Create: `dashboard/lib/lifeScore.ts`
 - Create: `dashboard/lib/timeOfDay.ts`
 
-- [ ] **Step 1: Create dashboard/lib/types.ts**
+**Step 1: Create dashboard/lib/types.ts**
 
 ```typescript
 export interface Weather {
@@ -622,7 +622,7 @@ export interface Expense {
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 ```
 
-- [ ] **Step 2: Create dashboard/lib/supabase.ts**
+**Step 2: Create dashboard/lib/supabase.ts**
 
 ```typescript
 import { createClient } from '@supabase/supabase-js'
@@ -633,7 +633,7 @@ const supabaseKey  = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 export const supabase = createClient(supabaseUrl, supabaseKey)
 ```
 
-- [ ] **Step 3: Create dashboard/lib/weather.ts**
+**Step 3: Create dashboard/lib/weather.ts**
 
 ```typescript
 import type { Weather, AvatarLayers } from './types'
@@ -668,7 +668,7 @@ export async function fetchWeather(location: string): Promise<Weather> {
 }
 ```
 
-- [ ] **Step 4: Create dashboard/lib/lifeScore.ts**
+**Step 4: Create dashboard/lib/lifeScore.ts**
 
 ```typescript
 import type { LifeScoreData, ScoreInputs } from './types'
@@ -697,7 +697,7 @@ export function scoreColor(score: number): string {
 }
 ```
 
-- [ ] **Step 5: Create dashboard/lib/timeOfDay.ts**
+**Step 5: Create dashboard/lib/timeOfDay.ts**
 
 ```typescript
 import type { TimeOfDay } from './types'
@@ -722,7 +722,7 @@ export function textColorForTime(tod: TimeOfDay): string {
 }
 ```
 
-- [ ] **Step 6: Commit**
+**Step 6: Commit**
 
 ```bash
 cd E:/Projekty/LifeOS
@@ -737,7 +737,7 @@ git commit -m "feat: add TypeScript types and lib layer"
 **Files:**
 - Create: `dashboard/supabase/schema.sql`
 
-- [ ] **Step 1: Create dashboard/supabase/schema.sql**
+**Step 1: Create dashboard/supabase/schema.sql**
 
 ```sql
 -- LifeOS Dashboard — Supabase Schema
@@ -800,7 +800,7 @@ ALTER PUBLICATION supabase_realtime ADD TABLE expenses;
 ALTER PUBLICATION supabase_realtime ADD TABLE daily_stats;
 ```
 
-- [ ] **Step 2: Commit**
+**Step 2: Commit**
 
 ```bash
 cd E:/Projekty/LifeOS
@@ -817,7 +817,7 @@ git commit -m "feat: add Supabase schema"
 - Create: `dashboard/components/ui/Badge.tsx`
 - Create: `dashboard/components/ui/ProgressBar.tsx`
 
-- [ ] **Step 1: Create dashboard/components/ui/Card.tsx**
+**Step 1: Create dashboard/components/ui/Card.tsx**
 
 ```tsx
 interface CardProps {
@@ -846,7 +846,7 @@ export default function Card({
 }
 ```
 
-- [ ] **Step 2: Create dashboard/components/ui/Badge.tsx**
+**Step 2: Create dashboard/components/ui/Badge.tsx**
 
 ```tsx
 interface BadgeProps {
@@ -866,7 +866,7 @@ export default function Badge({ children, className = '' }: BadgeProps) {
 }
 ```
 
-- [ ] **Step 3: Create dashboard/components/ui/ProgressBar.tsx**
+**Step 3: Create dashboard/components/ui/ProgressBar.tsx**
 
 ```tsx
 interface ProgressBarProps {
@@ -905,7 +905,7 @@ export default function ProgressBar({
 }
 ```
 
-- [ ] **Step 4: Commit**
+**Step 4: Commit**
 
 ```bash
 cd E:/Projekty/LifeOS
@@ -925,7 +925,7 @@ git commit -m "feat: add UI base components (Card, Badge, ProgressBar)"
 - Create: `dashboard/public/avatar/clothing/.gitkeep`
 - Create: `dashboard/public/avatar/effects/.gitkeep`
 
-- [ ] **Step 1: Create dashboard/components/avatar/AvatarLayer.tsx**
+**Step 1: Create dashboard/components/avatar/AvatarLayer.tsx**
 
 ```tsx
 'use client'
@@ -968,7 +968,7 @@ export default function AvatarLayer({
 }
 ```
 
-- [ ] **Step 2: Create dashboard/components/avatar/AvatarSystem.tsx**
+**Step 2: Create dashboard/components/avatar/AvatarSystem.tsx**
 
 ```tsx
 'use client'
@@ -1064,7 +1064,7 @@ export default function AvatarSystem({
 }
 ```
 
-- [ ] **Step 3: Create public/avatar/README.md**
+**Step 3: Create public/avatar/README.md**
 
 ```markdown
 # Avatar PNG Layers
@@ -1094,7 +1094,7 @@ Place PNG files (512×512, transparent background) in this directory.
 - All layers must align to the same 512×512 canvas
 ```
 
-- [ ] **Step 4: Commit**
+**Step 4: Commit**
 
 ```bash
 cd E:/Projekty/LifeOS
@@ -1113,7 +1113,7 @@ git commit -m "feat: add avatar system with Framer Motion layer animation"
 - Create: `dashboard/components/widgets/CalendarWidget.tsx`
 - Create: `dashboard/components/widgets/LofiRadio.tsx`
 
-- [ ] **Step 1: Create dashboard/components/widgets/ClockWidget.tsx**
+**Step 1: Create dashboard/components/widgets/ClockWidget.tsx**
 
 ```tsx
 'use client'
@@ -1145,7 +1145,7 @@ export default function ClockWidget() {
 }
 ```
 
-- [ ] **Step 2: Create dashboard/components/widgets/WeatherWidget.tsx**
+**Step 2: Create dashboard/components/widgets/WeatherWidget.tsx**
 
 ```tsx
 import type { Weather } from '@/lib/types'
@@ -1194,7 +1194,7 @@ export default function WeatherWidget({ weather, compact = false }: WeatherWidge
 }
 ```
 
-- [ ] **Step 3: Create dashboard/components/widgets/LifeScoreWidget.tsx**
+**Step 3: Create dashboard/components/widgets/LifeScoreWidget.tsx**
 
 ```tsx
 import { scoreColor } from '@/lib/lifeScore'
@@ -1238,7 +1238,7 @@ export default function LifeScoreWidget({
 }
 ```
 
-- [ ] **Step 4: Create dashboard/components/widgets/CalendarWidget.tsx**
+**Step 4: Create dashboard/components/widgets/CalendarWidget.tsx**
 
 ```tsx
 import type { CalendarEvent } from '@/lib/types'
@@ -1274,7 +1274,7 @@ export default function CalendarWidget({ event }: CalendarWidgetProps) {
 }
 ```
 
-- [ ] **Step 5: Create dashboard/components/widgets/LofiRadio.tsx**
+**Step 5: Create dashboard/components/widgets/LofiRadio.tsx**
 
 ```tsx
 'use client'
@@ -1313,7 +1313,7 @@ export default function LofiRadio() {
 }
 ```
 
-- [ ] **Step 6: Commit**
+**Step 6: Commit**
 
 ```bash
 cd E:/Projekty/LifeOS
@@ -1329,7 +1329,7 @@ git commit -m "feat: add passive mode widgets (clock, weather, score, calendar, 
 - Create: `dashboard/components/widgets/WorkoutWidget.tsx`
 - Create: `dashboard/components/widgets/FinanceWidget.tsx`
 
-- [ ] **Step 1: Create dashboard/components/widgets/WorkoutWidget.tsx**
+**Step 1: Create dashboard/components/widgets/WorkoutWidget.tsx**
 
 ```tsx
 import type { Workout } from '@/lib/types'
@@ -1369,7 +1369,7 @@ export default function WorkoutWidget({ lastWorkout }: WorkoutWidgetProps) {
 }
 ```
 
-- [ ] **Step 2: Create dashboard/components/widgets/FinanceWidget.tsx**
+**Step 2: Create dashboard/components/widgets/FinanceWidget.tsx**
 
 ```tsx
 import ProgressBar from '@/components/ui/ProgressBar'
@@ -1430,7 +1430,7 @@ export default function FinanceWidget({
 }
 ```
 
-- [ ] **Step 3: Commit**
+**Step 3: Commit**
 
 ```bash
 cd E:/Projekty/LifeOS
@@ -1447,7 +1447,7 @@ git commit -m "feat: add active mode widgets (workout, finance)"
 - Create: `dashboard/components/layout/ActiveLayout.tsx`
 - Create: `dashboard/components/layout/BottomNav.tsx`
 
-- [ ] **Step 1: Create dashboard/components/layout/PassiveLayout.tsx**
+**Step 1: Create dashboard/components/layout/PassiveLayout.tsx**
 
 ```tsx
 import AvatarSystem from '@/components/avatar/AvatarSystem'
@@ -1511,7 +1511,7 @@ export default function PassiveLayout({
 }
 ```
 
-- [ ] **Step 2: Create dashboard/components/layout/BottomNav.tsx**
+**Step 2: Create dashboard/components/layout/BottomNav.tsx**
 
 ```tsx
 'use client'
@@ -1555,7 +1555,7 @@ export default function BottomNav() {
 }
 ```
 
-- [ ] **Step 3: Create dashboard/components/layout/ActiveLayout.tsx**
+**Step 3: Create dashboard/components/layout/ActiveLayout.tsx**
 
 ```tsx
 import BottomNav from './BottomNav'
@@ -1576,7 +1576,7 @@ export default function ActiveLayout({ children }: ActiveLayoutProps) {
 }
 ```
 
-- [ ] **Step 4: Commit**
+**Step 4: Commit**
 
 ```bash
 cd E:/Projekty/LifeOS
@@ -1594,7 +1594,7 @@ git commit -m "feat: add layout components (PassiveLayout, ActiveLayout, BottomN
 - Create: `dashboard/app/api/brightness/route.ts`
 - Create: `dashboard/app/api/data/route.ts`
 
-- [ ] **Step 1: Create dashboard/app/api/weather/route.ts**
+**Step 1: Create dashboard/app/api/weather/route.ts**
 
 ```typescript
 import { NextRequest, NextResponse } from 'next/server'
@@ -1635,7 +1635,7 @@ export async function GET(req: NextRequest) {
 }
 ```
 
-- [ ] **Step 2: Create dashboard/app/api/scores/route.ts**
+**Step 2: Create dashboard/app/api/scores/route.ts**
 
 ```typescript
 import { NextResponse } from 'next/server'
@@ -1700,7 +1700,7 @@ export async function GET() {
 }
 ```
 
-- [ ] **Step 3: Create dashboard/app/api/brightness/route.ts**
+**Step 3: Create dashboard/app/api/brightness/route.ts**
 
 ```typescript
 import { NextRequest, NextResponse } from 'next/server'
@@ -1728,7 +1728,7 @@ export async function POST(req: NextRequest) {
 }
 ```
 
-- [ ] **Step 4: Create dashboard/app/api/data/route.ts**
+**Step 4: Create dashboard/app/api/data/route.ts**
 
 ```typescript
 import { NextResponse } from 'next/server'
@@ -1775,7 +1775,7 @@ export async function GET() {
 }
 ```
 
-- [ ] **Step 5: Commit**
+**Step 5: Commit**
 
 ```bash
 cd E:/Projekty/LifeOS
@@ -1792,7 +1792,7 @@ git commit -m "feat: add Next.js API routes (weather, scores, brightness, data)"
 - Create: `dashboard/hooks/useLifeScore.ts`
 - Create: `dashboard/hooks/useSupabase.ts`
 
-- [ ] **Step 1: Create dashboard/hooks/useWeather.ts**
+**Step 1: Create dashboard/hooks/useWeather.ts**
 
 ```typescript
 'use client'
@@ -1827,7 +1827,7 @@ export default function useWeather(location: string) {
 }
 ```
 
-- [ ] **Step 2: Create dashboard/hooks/useLifeScore.ts**
+**Step 2: Create dashboard/hooks/useLifeScore.ts**
 
 ```typescript
 'use client'
@@ -1863,7 +1863,7 @@ export default function useLifeScore() {
 }
 ```
 
-- [ ] **Step 3: Create dashboard/hooks/useSupabase.ts**
+**Step 3: Create dashboard/hooks/useSupabase.ts**
 
 ```typescript
 'use client'
@@ -1912,7 +1912,7 @@ export default function useSupabase() {
 }
 ```
 
-- [ ] **Step 4: Commit**
+**Step 4: Commit**
 
 ```bash
 cd E:/Projekty/LifeOS
@@ -1928,7 +1928,7 @@ git commit -m "feat: add data hooks (weather, lifeScore, supabase real-time)"
 - Create: `dashboard/app/layout.tsx`
 - Create: `dashboard/app/page.tsx`
 
-- [ ] **Step 1: Create dashboard/app/layout.tsx**
+**Step 1: Create dashboard/app/layout.tsx**
 
 ```tsx
 import type { Metadata } from 'next'
@@ -1950,7 +1950,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 ```
 
-- [ ] **Step 2: Create dashboard/app/page.tsx — Passive Mode**
+**Step 2: Create dashboard/app/page.tsx — Passive Mode**
 
 ```tsx
 'use client'
@@ -2027,7 +2027,7 @@ export default function PassivePage() {
 }
 ```
 
-- [ ] **Step 3: Commit**
+**Step 3: Commit**
 
 ```bash
 cd E:/Projekty/LifeOS
@@ -2046,7 +2046,7 @@ git commit -m "feat: add root layout and passive mode page"
 - Create: `dashboard/app/dashboard/finance/page.tsx`
 - Create: `dashboard/app/dashboard/correlations/page.tsx`
 
-- [ ] **Step 1: Create dashboard/app/dashboard/layout.tsx**
+**Step 1: Create dashboard/app/dashboard/layout.tsx**
 
 ```tsx
 'use client'
@@ -2098,7 +2098,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 }
 ```
 
-- [ ] **Step 2: Create dashboard/app/dashboard/page.tsx — Active Home**
+**Step 2: Create dashboard/app/dashboard/page.tsx — Active Home**
 
 ```tsx
 'use client'
@@ -2190,7 +2190,7 @@ export default function DashboardHome() {
 }
 ```
 
-- [ ] **Step 3: Create dashboard/app/dashboard/workouts/page.tsx**
+**Step 3: Create dashboard/app/dashboard/workouts/page.tsx**
 
 ```tsx
 import Card from '@/components/ui/Card'
@@ -2207,7 +2207,7 @@ export default function WorkoutsPage() {
 }
 ```
 
-- [ ] **Step 4: Create dashboard/app/dashboard/finance/page.tsx**
+**Step 4: Create dashboard/app/dashboard/finance/page.tsx**
 
 ```tsx
 import Card from '@/components/ui/Card'
@@ -2224,7 +2224,7 @@ export default function FinancePage() {
 }
 ```
 
-- [ ] **Step 5: Create dashboard/app/dashboard/correlations/page.tsx**
+**Step 5: Create dashboard/app/dashboard/correlations/page.tsx**
 
 ```tsx
 import Card from '@/components/ui/Card'
@@ -2241,7 +2241,7 @@ export default function CorrelationsPage() {
 }
 ```
 
-- [ ] **Step 6: Commit**
+**Step 6: Commit**
 
 ```bash
 cd E:/Projekty/LifeOS
@@ -2253,7 +2253,7 @@ git commit -m "feat: add active mode pages (home grid + module stubs)"
 
 ## Task 15: Install Dependencies + Verify
 
-- [ ] **Step 1: Install dependencies**
+**Step 1: Install dependencies**
 
 ```bash
 cd E:/Projekty/LifeOS/dashboard
@@ -2262,7 +2262,7 @@ npm install
 
 Expected: No peer dependency errors. `node_modules/` created.
 
-- [ ] **Step 2: Copy env file**
+**Step 2: Copy env file**
 
 ```bash
 cp .env.local.example .env.local
@@ -2270,7 +2270,7 @@ cp .env.local.example .env.local
 # For now, set NEXT_PUBLIC_SUPABASE_URL=http://localhost and NEXT_PUBLIC_SUPABASE_ANON_KEY=test
 ```
 
-- [ ] **Step 3: Run dev server**
+**Step 3: Run dev server**
 
 ```bash
 npm run dev
@@ -2283,17 +2283,17 @@ Expected output:
 ✓ Ready in Xs
 ```
 
-- [ ] **Step 4: Verify passive mode loads**
+**Step 4: Verify passive mode loads**
 
 Open `http://localhost:3000` in browser.
 Expected: Page renders without crash. Background gradient visible. ClockWidget shows current time.
 
-- [ ] **Step 5: Verify active mode loads**
+**Step 5: Verify active mode loads**
 
 Click anywhere on the page (simulates touch).
 Expected: Navigates to `/dashboard`, grid layout visible, BottomNav shows 5 tabs.
 
-- [ ] **Step 6: Run lint**
+**Step 6: Run lint**
 
 ```bash
 npm run lint
@@ -2301,7 +2301,7 @@ npm run lint
 
 Expected: No errors (warnings OK).
 
-- [ ] **Step 7: Final commit**
+**Step 7: Final commit**
 
 ```bash
 cd E:/Projekty/LifeOS

@@ -34,3 +34,7 @@ supabase/.temp
 
 # Tools
 .superpowers/
+.docs/superpowers/
+
+# Aditional
+lifeos.drawio
