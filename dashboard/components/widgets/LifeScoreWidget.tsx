@@ -1,4 +1,3 @@
-// components/widgets/LifeScoreWidget.tsx
 'use client'
 import useLifeScore from '@/hooks/useLifeScore'
 import ProgressBar from '@/components/ui/ProgressBar'
@@ -23,7 +22,7 @@ export default function LifeScoreWidget({ size = 'full' }: LifeScoreWidgetProps)
   const color = scoreColor(data.score)
 
   return (
-    <div className="card-beige px-5 py-4 flex flex-col gap-3 min-w-[140px]">
+    <div className={`card-beige px-5 py-4 flex flex-col gap-3 ${size === 'small' ? 'min-w-[140px]' : 'min-w-[180px]'}`}>
       <div>
         <span style={{ fontFamily: 'Georgia, serif', fontSize: size === 'small' ? 48 : 56, fontWeight: 700, color, lineHeight: 1 }}>
           {data.score}
