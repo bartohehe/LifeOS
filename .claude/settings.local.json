@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pandoc --track-changes=all \"C:\\\\Users\\\\barto\\\\Downloads\\\\LifeOS_Dashboard_Dokumentacja.docx\" -o /tmp/lifeos_docs.md)",
+      "Read(//tmp/**)",
+      "Bash(python \"C:\\\\Users\\\\barto\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\5.0.7\\\\skills\\\\brainstorming\\\\scripts\\\\start-server.sh\")",
+      "Bash(python C:/Users/barto/.claude/plugins/cache/claude-plugins-official/anthropic-skills/*/skills/docx/scripts/office/unpack.py \"C:\\\\Users\\\\barto\\\\Downloads\\\\LifeOS_Dashboard_Dokumentacja.docx\" \"C:/Temp/lifeos_docx_unpacked/\")",
+      "Bash(python 'C:\\\\Users\\\\barto\\\\AppData\\\\Roaming\\\\Claude\\\\local-agent-mode-sessions\\\\skills-plugin\\\\c191d999-a16c-456c-83b5-80461959dd3a\\\\49804d24-8f13-4ec0-bc1e-3bfd8472c2c1\\\\skills\\\\docx\\\\scripts\\\\office\\\\unpack.py' 'C:\\\\Users\\\\barto\\\\Downloads\\\\LifeOS_Dashboard_Dokumentacja.docx' C:/Temp/lifeos_docx/)",
+      "Bash(python -c ':*)",
+      "Bash(npx tsc:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
