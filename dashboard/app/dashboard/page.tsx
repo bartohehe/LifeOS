@@ -50,7 +50,9 @@ export default function DashboardHome() {
       <motion.div className="flex gap-4" {...fadeUp(0.05)}>
         <WeatherWidget />
         <ClockWidget color="#1E2D1A" />
-        <LifeScoreWidget size="small" />
+        <div className="ml-auto">
+          <LifeScoreWidget size="small" />
+        </div>
       </motion.div>
 
       {/* Row 2, Col 1: Workout */}
