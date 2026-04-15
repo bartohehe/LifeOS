@@ -111,7 +111,7 @@ export default function FinancePage() {
                   tickLine={false}
                 />
                 <Tooltip
-                  formatter={(value: unknown, name: unknown) => [
+                  formatter={(value: string | number, name: string | number) => [
                     `${Number(value).toLocaleString('pl-PL')} zł`,
                     String(name),
                   ]}

@@ -18,5 +18,5 @@ export interface CalendarEvent { title: string; startTime: string; hoursUntil: n
 export interface NetWorthSnapshot { id: string; created_at: string; cash_pln: number; investments: number; crypto_pln: number; liabilities: number; total: number }
 export interface DailyStats { id: string; date: string; sleep_hours: number; mood: number; life_score: number }
 export interface Workout { id: string; created_at: string; date: string; duration_min: number; rpe: number; notes: string }
-export interface Expense { id: string; created_at: string; amount: number; category: string; note: string; is_fixed: boolean }
+export interface Expense { id: string; created_at: string; amount: number; category: string; note: string | null; is_fixed: boolean }
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
