@@ -12,7 +12,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ size?: number | string; col
 }
 
 export default function WeatherWidget() {
-  const { weather } = useWeather('Warszawa')
+  const { weather } = useWeather('Wroclaw')
   if (!weather) return null
 
   const Icon = ICON_MAP[weather.condition] ?? Cloud
