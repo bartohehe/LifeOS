@@ -12,7 +12,7 @@ export interface FinanceSnapshot {
   total: number       // cash + investments + crypto - liabilities
 }
 
-interface UseFinanceResult {
+export interface UseFinanceResult {
   monthlyBudget: number
   spent: number
   expenses: Expense[]
@@ -84,9 +84,12 @@ export default function useFinance(): UseFinanceResult {
   // ──────────────────────────────────────────────────────────────────────────
 
   // MOCK MODE — remove useMemo and uncomment Supabase block above when ready
+  const mockSpent = Math.round(
+    MOCK_EXPENSES.reduce((acc, e) => acc + e.amount, 0) * 100
+  ) / 100
   return useMemo(() => ({
     monthlyBudget: 3000,
-    spent: 2190,
+    spent: mockSpent,
     expenses: MOCK_EXPENSES,
     netWorthHistory: MOCK_NET_WORTH_HISTORY,
     currentNetWorth: MOCK_NET_WORTH_HISTORY[MOCK_NET_WORTH_HISTORY.length - 1].total,
