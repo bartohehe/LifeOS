@@ -94,7 +94,7 @@ export default function FinancePage() {
               {currentNetWorth.toLocaleString('pl-PL')} zł
             </span>
           </div>
-          <div style={{ flex: 1, minHeight: 0 }}>
+          <div style={{ flex: 1, minHeight: 0, overflow: 'hidden' }}>
             <ResponsiveContainer width="100%" height="100%">
               <ComposedChart data={netWorthHistory} margin={{ top: 4, right: 4, left: -12, bottom: 0 }}>
                 <XAxis
