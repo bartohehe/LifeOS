@@ -43,6 +43,10 @@ const MOCK_EXPENSES: Expense[] = [
   { id: '10', created_at: '2026-04-04T17:45:00Z', amount: 55.20,   category: 'food',          note: 'Carrefour',              is_fixed: false },
 ]
 
+const MOCK_SPENT = Math.round(
+  MOCK_EXPENSES.reduce((acc, e) => acc + e.amount, 0) * 100
+) / 100
+
 export default function useFinance(): UseFinanceResult {
   // ── REAL SUPABASE ──────────────────────────────────────────────────────────
   // const [state, setState] = useState<UseFinanceResult>({
@@ -84,12 +88,9 @@ export default function useFinance(): UseFinanceResult {
   // ──────────────────────────────────────────────────────────────────────────
 
   // MOCK MODE — remove useMemo and uncomment Supabase block above when ready
-  const mockSpent = Math.round(
-    MOCK_EXPENSES.reduce((acc, e) => acc + e.amount, 0) * 100
-  ) / 100
   return useMemo(() => ({
     monthlyBudget: 3000,
-    spent: mockSpent,
+    spent: MOCK_SPENT,
     expenses: MOCK_EXPENSES,
     netWorthHistory: MOCK_NET_WORTH_HISTORY,
     currentNetWorth: MOCK_NET_WORTH_HISTORY[MOCK_NET_WORTH_HISTORY.length - 1].total,

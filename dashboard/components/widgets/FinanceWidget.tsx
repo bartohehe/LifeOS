@@ -14,7 +14,7 @@ const CATEGORY_LABELS: Record<string, string> = {
 
 export default function FinanceWidget() {
   const { monthlyBudget, spent, currentNetWorth, expenses } = useFinance()
-  const pct = Math.round((spent / monthlyBudget) * 100)
+  const pct = monthlyBudget > 0 ? Math.round((spent / monthlyBudget) * 100) : 0
   const lastExpense = expenses[0] ?? null
 
   return (
