@@ -17,7 +17,7 @@ export interface UseCorrelationsResult {
 }
 
 // 30 days: 2026-04-01 → 2026-04-30
-// workout_rpe present Mon/Tue/Thu/Fri/Sat (~5×/week), null on Wed/Sun
+// workout_rpe present ~5×/week (schedule approximate), null on rest days
 // daily_spend higher on weekends
 const MOCK_DATA: CorrelationEntry[] = [
   { date: '2026-04-01', sleep_hours: 7.5, mood: 7, life_score: 72, workout_rpe: null,  daily_spend: 180 },
@@ -107,7 +107,7 @@ const MOCK_DATA: CorrelationEntry[] = [
 // MOCK MODE — replace with Supabase block above when ready
 export default function useCorrelations(days: 7 | 14 | 30): UseCorrelationsResult {
   return useMemo(() => ({
-    data: MOCK_DATA.slice(-days),
+    data: MOCK_DATA.slice(Math.max(0, MOCK_DATA.length - days)),
     loading: false,
   }), [days])
 }
